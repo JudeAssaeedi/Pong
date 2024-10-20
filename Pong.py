@@ -3,7 +3,7 @@ import pygame
 pygame.init()
 
 #window size
-WIDTH, HEIGHT = 700, 500
+WIDTH, HEIGHT = 750, 550
 #Making a window
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 #Title
@@ -12,7 +12,6 @@ pygame.display.set_caption("Pong")
 FPS = 60
 
 BABY_PINK = (250, 218, 221)
-BABY_BLUE = (137, 207, 240)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
@@ -81,11 +80,11 @@ def draw(win, paddles, ball, left_score, right_score):
     for paddle in paddles:
         paddle.draw(win)
     
-    for i in range(10, HEIGHT, HEIGHT//15):
+    for i in range(6, HEIGHT, HEIGHT//20):
         if i % 2 == 1:
             continue
         #5 is because we took half of the 10
-        pygame.draw.rect(win, BABY_PINK, (WIDTH//2 - 5 , i, 10, HEIGHT//15))
+        pygame.draw.rect(win, BABY_PINK, (WIDTH//2 - 7 , i, 10, HEIGHT//20))
 
     ball.draw(win)
     pygame.display.update()
